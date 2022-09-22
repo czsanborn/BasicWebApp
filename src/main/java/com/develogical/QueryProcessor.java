@@ -11,8 +11,14 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("name")) {
             return "CS";
         }
-        if (query.toLowerCase().contains("hello")){
-            return "Hi";
+        if (query.toLowerCase().contains("largest")){
+            Pattern regex = Pattern.compile("which of the following numbers is the largest: (\\d+), (\\d+)");
+            Matcher matcher = regex.matcher(query.toLowerCase());
+            if (Integer.parseInt(matcher.group(1)) > Integer.parseInt(matcher.group(2))) {
+                return matcher.group(1);
+            } else {
+                return matcher.group(2);
+            }
         }
         return "";
     }

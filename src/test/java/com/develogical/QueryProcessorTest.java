@@ -30,9 +30,4 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("what is your name"), containsString("CS"));
     }
 
-    @Test
-    public void knowsHello() throws Exception {
-        assertThat(queryProcessor.process("Hello, my name is..."), containsString("Hi"));
-    }
-
 }
