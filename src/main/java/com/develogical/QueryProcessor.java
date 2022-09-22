@@ -15,15 +15,15 @@ public class QueryProcessor {
             return "CS";
         }
         if (query.toLowerCase().contains("largest")){
-            Pattern regex1 = Pattern.compile("which of the following numbers is the largest: (\\d+), (\\d+)");
-            Matcher matcher = regex1.matcher(query.toLowerCase());
+            Pattern regex = Pattern.compile("which of the following numbers is the largest: (\\d+), (\\d+)");
+            Matcher matcher = regex.matcher(query.toLowerCase());
             if (Integer.parseInt(matcher.group(1)) > Integer.parseInt(matcher.group(2))) {
                 return matcher.group(1);
             } else {
                 return matcher.group(2);
             }
         }
-        if (query.toLowercase().contains("theresa")){
+        if (query.toLowerCase().contains("theresa")){
             return "2016";
         }
         return "";
